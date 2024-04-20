@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class FileOperations {
@@ -17,7 +18,6 @@ public class FileOperations {
             while ((line = reader.readLine()) != null){
                 fruits.addAll(Arrays.asList(line.split("\\s+")));
             }
-            System.out.println(fruits);
             if(fruits.isEmpty()){
                 System.out.println("Файл пустой, никакого пикника не будет :(");
             }
@@ -33,4 +33,17 @@ public class FileOperations {
         return fruits;
     }
 
+    public static HashMap<String, Integer> hashFruits(List<String> fruits){
+        HashMap<String, Integer> hashFruits = new HashMap<>();
+        for(String fruit : fruits){
+            if (hashFruits.containsKey(fruit)){
+                hashFruits.put(fruit, hashFruits.get(fruit) + 1);
+            }
+            else{
+                hashFruits.put(fruit, 1);
+            }
+        }
+        System.out.println(hashFruits);
+        return hashFruits;
+    }
 }
