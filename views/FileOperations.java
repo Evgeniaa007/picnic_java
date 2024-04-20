@@ -13,7 +13,7 @@ public class FileOperations {
     
     public static List<String> readFile (String filename){
         List<String> fruits = new ArrayList<>();
-        try(BufferedReader reader = new BufferedReader(new FileReader("input.txt"))){
+        try(BufferedReader reader = new BufferedReader(new FileReader(filename))){
             String line;
             while ((line = reader.readLine()) != null){
                 fruits.addAll(Arrays.asList(line.split("\\s+")));
@@ -43,7 +43,6 @@ public class FileOperations {
                 hashFruits.put(fruit, 1);
             }
         }
-        System.out.println(hashFruits);
         return hashFruits;
     }
 }

@@ -21,4 +21,8 @@ public class Presenter {
     public void longestWordPresenter(){
         view.printLongestWord(model.longestWord(fileName));
     }
+
+    public void wordsFrequencyPresenter(){
+        view.printWordsFrequency(model.wordsFrequency(fileName));
+    }
 }

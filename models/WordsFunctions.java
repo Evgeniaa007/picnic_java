@@ -28,6 +28,7 @@ public class WordsFunctions implements Model {
 
     @Override
     public HashMap<String, Integer> wordsFrequency(String fileName) {
-        return null;
+        HashMap<String, Integer> hashFruits = FileOperations.hashFruits(FileOperations.readFile(fileName));
+        return hashFruits;
     }
 }
